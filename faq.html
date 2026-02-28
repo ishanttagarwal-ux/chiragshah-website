@@ -10,31 +10,15 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 :root{
-  --navy:#0A1628;
-  --navy2:#12234A;
-  --navy3:#1B3460;
-  --blue:#1D4ED8;
-  --blue2:#3B82F6;
-  --white:#FFFFFF;
-  --off:#F7F8FA;
-  --gray1:#EEF0F4;
-  --gray2:#C4C9D4;
-  --gray3:#6B7280;
-  --text:#374151;
-  --bdr:#E5E7EB;
-  --sh1:0 4px 24px rgba(10,22,40,.10);
-  --sh2:0 20px 60px rgba(10,22,40,.14);
-  --sh3:0 32px 80px rgba(10,22,40,.18)
+  --navy:#0A1628;--navy2:#12234A;--navy3:#1B3460;
+  --blue:#1D4ED8;--blue2:#3B82F6;
+  --off:#F7F8FA;--gray1:#EEF0F4;--gray2:#C4C9D4;--gray3:#6B7280;
+  --text:#374151;--bdr:#E5E7EB;
+  --sh1:0 4px 24px rgba(10,22,40,.10);--sh2:0 20px 60px rgba(10,22,40,.14);--sh3:0 32px 80px rgba(10,22,40,.18)
 }
 body{font-family:'Inter',sans-serif;background:#fff;color:var(--navy);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:var(--off)}
-::-webkit-scrollbar-thumb{background:var(--navy3);border-radius:2px}
-
-/* PROGRESS */
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--off)}::-webkit-scrollbar-thumb{background:var(--navy3);border-radius:2px}
 #pgbar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue2));z-index:3000;width:0;transition:width .1s linear}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);transition:box-shadow .3s}
 nav.sc{box-shadow:var(--sh1)}
 .nb{text-decoration:none;display:flex;flex-direction:column;gap:2px}
@@ -45,225 +29,70 @@ nav.sc{box-shadow:var(--sh1)}
 .nm a:hover{color:var(--navy);background:var(--gray1)}
 .ncta{background:var(--navy)!important;color:#fff!important;padding:8px 18px!important;border-radius:6px!important;font-weight:600!important}
 .ncta:hover{background:var(--navy3)!important}
-
-/* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative;overflow:hidden;background:#fff}
-.hgrid{position:absolute;inset:0;background-image:linear-gradient(var(--bdr) 1px,transparent 1px),linear-gradient(90deg,var(--bdr) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 70% 70% at 60% 50%,black 30%,transparent 80%);opacity:.45;pointer-events:none}
-.hglow{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,.06),transparent 65%);animation:gpulse 6s ease-in-out infinite;pointer-events:none}
-@keyframes gpulse{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-50%) scale(1.08)}}
-.hleft{position:relative;z-index:2;max-width:640px}
-.hbadge{display:inline-flex;align-items:center;gap:8px;background:var(--gray1);border:1px solid var(--bdr);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:600;color:var(--gray3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px;opacity:0;animation:fup .7s ease .1s forwards}
-.hdot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:dpulse 2s ease infinite}
-@keyframes dpulse{0%,100%{opacity:1}50%{opacity:.3}}
-.htitle{font-family:'Playfair Display',Georgia,serif;font-size:clamp(44px,5.5vw,72px);font-weight:500;line-height:1.08;letter-spacing:-.02em;color:var(--navy);margin-bottom:24px;opacity:0;animation:fup .8s ease .25s forwards}
-.htitle em{font-style:italic;color:var(--blue)}
-.hsub{font-size:16px;font-weight:400;line-height:1.7;color:var(--gray3);max-width:500px;margin-bottom:44px;opacity:0;animation:fup .8s ease .4s forwards}
-.hbtns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fup .8s ease .55s forwards}
-.btn1{background:var(--navy);color:#fff;padding:13px 28px;border-radius:7px;font-size:13px;font-weight:600;text-decoration:none;border:2px solid var(--navy);transition:all .25s;display:inline-flex;align-items:center;gap:8px}
-.btn1:hover{background:var(--navy3);border-color:var(--navy3);transform:translateY(-1px);box-shadow:var(--sh1)}
-.btn2{background:transparent;color:var(--navy);padding:13px 28px;border-radius:7px;font-size:13px;font-weight:600;text-decoration:none;border:2px solid var(--bdr);transition:all .25s;display:inline-flex;align-items:center;gap:8px}
-.btn2:hover{border-color:var(--navy);background:var(--off);transform:translateY(-1px)}
-.hright{position:absolute;right:60px;top:50%;transform:translateY(-50%);width:440px;height:440px;opacity:0;animation:fin 1s ease .7s forwards}
-.hstats{display:flex;gap:40px;margin-top:56px;opacity:0;animation:fup .8s ease .7s forwards}
-.hsn{font-size:26px;font-weight:700;color:var(--navy);letter-spacing:-.03em;line-height:1}
-.hsn sup{font-size:14px;color:var(--blue)}
-.hsl{font-size:11px;font-weight:500;color:var(--gray3);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
-
-/* EYEBROW + TITLE */
-.ey{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
-.ey::before{content:'';width:28px;height:1.5px;background:var(--blue)}
-.st{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,48px);font-weight:500;line-height:1.15;letter-spacing:-.02em;color:var(--navy)}
-.st em{font-style:italic;color:var(--blue)}
-
-/* STATS BAND */
-#stats{background:var(--navy);padding:80px 60px;position:relative;overflow:hidden}
-.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);position:relative;z-index:1}
-.sc2{padding:52px 40px;background:var(--navy);transition:background .35s;position:relative;overflow:hidden}
-.sc2::before{content:'';position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--blue),var(--blue2));transition:width .6s ease}
-.sc2:hover{background:#0d1e40}
-.sc2:hover::before{width:100%}
-.snum{font-family:'Inter',sans-serif;font-size:clamp(40px,4vw,58px);font-weight:700;color:#fff;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-.snum span{color:var(--blue2)}
-.sarc{position:absolute;right:20px;top:20px;width:54px;height:54px;opacity:.5}
-.slabel{margin-top:12px;font-size:11px;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase}
-
-/* SERVICES */
-#services{padding:120px 60px;background:var(--off)}
-.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
-.placard{background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:32px 26px 28px;position:relative;overflow:hidden;cursor:pointer;opacity:0;transform:translateY(32px);transition:opacity .5s ease,transform .5s cubic-bezier(.22,.68,0,1.2),box-shadow .35s,border-color .35s}
-.placard.in{opacity:1;transform:translateY(0)}
-.placard:hover{transform:translateY(-8px) scale(1.01)!important;box-shadow:var(--sh3);border-color:rgba(29,78,216,.2);z-index:3}
-.pbar{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue2));transform:scaleX(0);transform-origin:left;transition:transform .4s ease;border-radius:10px 10px 0 0}
-.placard:hover .pbar{transform:scaleX(1)}
-.placard::after{content:'';position:absolute;inset:0;border-radius:10px;background:linear-gradient(135deg,rgba(29,78,216,.04),transparent 60%);opacity:0;transition:opacity .35s}
-.placard:hover::after{opacity:1}
-.pnum{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--gray2);text-transform:uppercase;margin-bottom:18px;font-variant-numeric:tabular-nums}
-.picon{width:40px;height:40px;margin-bottom:18px;background:var(--off);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--navy3);transition:all .3s;flex-shrink:0}
-.picon svg{width:20px;height:20px}
-.placard:hover .picon{background:var(--navy);color:#fff}
-.ptitle{font-size:14px;font-weight:600;line-height:1.35;color:var(--navy);margin-bottom:8px;letter-spacing:-.01em;transition:color .25s;position:relative;z-index:1}
-.placard:hover .ptitle{color:var(--blue)}
-.pdesc{font-size:12px;color:var(--gray3);line-height:1.65;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s ease;position:relative;z-index:1}
-.placard:hover .pdesc{max-height:80px;opacity:1}
-.parr{position:absolute;bottom:18px;right:20px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--bdr);display:flex;align-items:center;justify-content:center;color:var(--blue);opacity:0;transform:translateX(-6px);transition:all .3s;z-index:1}
-.placard:hover .parr{opacity:1;transform:translateX(0)}
-
-/* CHATBOT */
-#chatbot{padding:120px 60px;background:#fff}
-.cbgrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:64px}
-.frows{display:flex;flex-direction:column;gap:0}
-.frow{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--bdr);opacity:0;transform:translateX(-18px);transition:all .5s ease}
-.frow:last-child{border-bottom:none}
-.frow.vis{opacity:1;transform:translateX(0)}
-.fiw{width:36px;height:36px;flex-shrink:0;background:var(--off);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--blue);margin-top:2px}
-.fiw svg{width:16px;height:16px}
-.fbody h4{font-size:14px;font-weight:600;color:var(--navy);letter-spacing:-.01em;margin-bottom:4px}
-.fbody p{font-size:13px;color:var(--gray3);line-height:1.6}
-.cwin{background:#fff;border-radius:14px;border:1px solid var(--bdr);box-shadow:var(--sh3);overflow:hidden;transform:perspective(1000px) rotateY(-3deg) rotateX(1.5deg);transition:transform .5s ease}
-.cwin:hover{transform:perspective(1000px) rotateY(0) rotateX(0)}
-.cbar{background:var(--navy);padding:14px 18px;display:flex;align-items:center;gap:10px}
-.cdots{display:flex;gap:5px}
-.cd{width:9px;height:9px;border-radius:50%}
-.clabel{font-size:12px;color:rgba(255,255,255,.6);font-weight:500;display:flex;align-items:center;gap:7px;margin-left:6px}
-.cbadge{width:6px;height:6px;background:#28C840;border-radius:50%;animation:dpulse 2s infinite}
-.cmsgs{padding:20px 18px;background:#F9FAFB;min-height:240px;display:flex;flex-direction:column;gap:14px;overflow-y:auto}
-.cmsg{display:flex;gap:8px;align-items:flex-end}
-.cmsg.u{flex-direction:row-reverse}
-.cav{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cmsg.b .cav{background:var(--navy)}
-.cmsg.u .cav{background:#4B5563}
-.cbub{max-width:220px;padding:9px 13px;border-radius:10px;font-size:12.5px;line-height:1.55;opacity:0;transform:translateY(6px);animation:min .3s ease forwards}
-@keyframes min{to{opacity:1;transform:translateY(0)}}
-.cmsg.b .cbub{background:#fff;color:var(--navy);border:1px solid var(--bdr);border-bottom-left-radius:3px}
-.cmsg.u .cbub{background:var(--navy);color:#fff;border-bottom-right-radius:3px}
-.tdots{display:flex;gap:4px;padding:9px 13px;background:#fff;border:1px solid var(--bdr);border-radius:10px;border-bottom-left-radius:3px;width:fit-content}
-.td{width:5px;height:5px;background:var(--gray2);border-radius:50%;animation:tb 1.1s ease infinite}
-.td:nth-child(2){animation-delay:.18s}.td:nth-child(3){animation-delay:.36s}
-@keyframes tb{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
-.cinrow{padding:12px 16px;border-top:1px solid var(--bdr);display:flex;gap:8px;align-items:center;background:#fff}
-.cinrow input{flex:1;border:1px solid var(--bdr);border-radius:20px;padding:9px 14px;font-family:inherit;font-size:12.5px;outline:none;transition:border-color .2s;color:var(--navy)}
-.cinrow input:focus{border-color:var(--navy3)}
-.csend{width:32px;height:32px;background:var(--navy);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;flex-shrink:0}
-.csend:hover{background:var(--navy3)}
-.csend svg{width:14px;height:14px;color:#fff}
-
-/* KEYBOARD */
-#kbsec{padding:100px 60px;background:var(--off);border-top:1px solid var(--bdr)}
-.kbinner{display:flex;flex-direction:column;align-items:center;gap:44px}
-.kbhdr{text-align:center}
-.kbhdr .ey{justify-content:center}
-.kbhdr .ey::before{display:none}
-.kbhdr p{font-size:14px;color:var(--gray3);margin-top:12px;line-height:1.65}
-.twscreen{background:var(--navy);border-radius:10px;padding:18px 26px;width:100%;max-width:680px;box-shadow:var(--sh2);display:flex;align-items:center;gap:0;border:1px solid rgba(255,255,255,.06)}
-.twp{font-family:'Inter',monospace;font-size:13px;color:var(--blue2);margin-right:8px;flex-shrink:0}
-.twt{font-family:'Inter',monospace;font-size:13.5px;color:#86EFAC;letter-spacing:.01em;flex:1;white-space:pre-wrap;word-break:break-all}
-.twc{display:inline-block;width:2px;height:16px;background:#86EFAC;margin-left:1px;vertical-align:middle;animation:blink .85s step-end infinite}
-@keyframes blink{50%{opacity:0}}
-.sndstat{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--gray3)}
-.sbars{display:flex;align-items:center;gap:2.5px;height:20px}
-.sb{width:2.5px;background:var(--blue);border-radius:2px;opacity:0;transition:opacity .2s;animation:sbw .7s ease infinite}
-.sb:nth-child(1){height:6px;animation-delay:0s}.sb:nth-child(2){height:12px;animation-delay:.08s}.sb:nth-child(3){height:18px;animation-delay:.16s}.sb:nth-child(4){height:12px;animation-delay:.24s}.sb:nth-child(5){height:6px;animation-delay:.32s}
-@keyframes sbw{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
-.sbars.on .sb{opacity:1}
-.keyboard{display:flex;flex-direction:column;gap:5px;align-items:center}
-.krow{display:flex;gap:5px}
-.key{min-width:38px;height:38px;padding:0 8px;background:#fff;border:1px solid var(--bdr);border-bottom:3px solid #D1D5DB;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:500;color:var(--text);cursor:pointer;transition:all .07s ease;box-shadow:0 1px 3px rgba(0,0,0,.06);user-select:none}
-.key:hover{border-color:var(--navy3);color:var(--navy)}
-.key.ka,.key:active{transform:translateY(2px);border-bottom-width:1px;background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:none}
-.ksp{background:var(--off);color:var(--gray3)}
-.kspc{min-width:200px}
-.kent{min-width:76px;background:var(--navy);color:#fff;border-color:var(--navy2)}
-.kent.ka,.kent:active{background:var(--blue);border-color:var(--blue)}
-.kbs{min-width:68px}.ktab{min-width:58px}.kcap{min-width:68px}.ksh{min-width:86px}.kw{min-width:50px}.karr{min-width:38px;font-size:13px}
-
-/* TRUSTED */
-#trusted{padding:72px 0;background:#fff;border-top:1px solid var(--bdr)}
-.tlabel{text-align:center;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gray3);margin-bottom:40px}
-.mqwrap{overflow:hidden;display:flex;flex-direction:column;gap:18px}
-.mqtr{display:flex;gap:0;width:max-content}
-.mqtr.l{animation:mql 28s linear infinite}
-.mqtr.r{animation:mqr 28s linear infinite}
-@keyframes mql{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes mqr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.mqi{display:flex;align-items:center;gap:10px;padding:12px 26px;border-right:1px solid var(--bdr);white-space:nowrap;filter:grayscale(1) opacity(.5);transition:filter .3s}
-.mqi:hover{filter:grayscale(0) opacity(1)}
-.mqlogo{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff}
-.mqname{font-size:12.5px;font-weight:600;color:var(--navy);letter-spacing:-.01em}
-
-/* TEAM */
-#team{padding:120px 60px;background:var(--off)}
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
-.tcard{background:#fff;border:1px solid var(--bdr);border-radius:10px;overflow:hidden;transition:all .35s}
-.tcard:hover{transform:translateY(-6px);box-shadow:var(--sh3);border-color:rgba(29,78,216,.2)}
-.tphoto{height:240px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:60px;font-weight:400;color:rgba(29,78,216,.2);background:var(--off)}
-.tinfo{padding:24px}
-.tname{font-size:16px;font-weight:700;color:var(--navy);letter-spacing:-.02em;margin-bottom:3px}
-.trole{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
-.tbio{font-size:13px;color:var(--gray3);line-height:1.65}
-.team-cta{text-align:center;margin-top:48px}
-
+/* BANNER */
+.pbanner{padding:140px 60px 80px;background:var(--navy);position:relative;overflow:hidden}
+.pbanner::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.pglow{position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,.12),transparent 65%);pointer-events:none}
+.pbc{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);margin-bottom:24px;position:relative;z-index:1}
+.pbc a{color:rgba(255,255,255,.35);text-decoration:none}
+.pbc span{color:rgba(255,255,255,.6)}
+.pey{display:inline-flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+.ptitle{font-family:"Playfair Display",Georgia,serif;font-size:clamp(38px,5vw,64px);font-weight:500;line-height:1.1;letter-spacing:-.02em;color:#fff;position:relative;z-index:1}
+.ptitle em{font-style:italic;color:#60A5FA}
+.psub{font-size:15px;color:rgba(255,255,255,.5);margin-top:14px;max-width:540px;line-height:1.7;position:relative;z-index:1}
+/* SEARCH */
+.fsearch{position:relative;max-width:540px;margin-top:32px;z-index:1}
+.fsearch input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 18px 14px 46px;color:#fff;font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:all .25s}
+.fsearch input::placeholder{color:rgba(255,255,255,.35)}
+.fsearch input:focus{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
+.fsearch svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4);width:18px;height:18px}
+/* STATS */
+.fstats{display:flex;gap:40px;margin-top:36px;position:relative;z-index:1}
+.fstat-n{font-size:26px;font-weight:700;color:#fff;letter-spacing:-.03em}
+.fstat-n span{color:#60A5FA}
+.fstat-l{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+/* LAYOUT */
+.wsec{padding:80px 60px}
+.wsec.off{background:var(--off)}
+.faqgrid{display:grid;grid-template-columns:260px 1fr;gap:60px;align-items:start}
+/* SIDEBAR */
+.faqsidebar{position:sticky;top:90px}
+.sidebar-title{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray3);margin-bottom:14px}
+.cat-nav{display:flex;flex-direction:column;gap:2px}
+.cat-btn{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;border:none;background:transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--gray3);text-align:left;transition:all .2s;width:100%}
+.cat-btn:hover{background:var(--gray1);color:var(--navy)}
+.cat-btn.active{background:var(--navy);color:#fff}
+.cat-count{margin-left:auto;font-size:10px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 7px;border-radius:100px}
+.cat-btn:not(.active) .cat-count{background:var(--gray1);color:var(--gray3)}
+.scontact{margin-top:24px;background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:18px}
+.scontact h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px}
+.scontact p{font-size:12px;color:var(--gray3);line-height:1.6;margin-bottom:12px}
+.scl{display:flex;flex-direction:column;gap:7px}
+.sclink{display:flex;align-items:center;gap:9px;padding:9px 12px;background:var(--off);border-radius:7px;text-decoration:none;color:var(--navy);font-size:12px;font-weight:500;transition:all .2s}
+.sclink:hover{background:var(--gray1);color:var(--blue)}
+.sclink svg{width:13px;height:13px;flex-shrink:0;color:var(--blue)}
+.scbook{background:var(--navy);color:#fff;border-radius:7px;padding:10px;text-decoration:none;font-size:12.5px;font-weight:600;text-align:center;display:block;margin-top:8px;transition:background .2s}
+.scbook:hover{background:var(--navy3)}
 /* FAQ */
-#faq{padding:120px 60px;background:#fff}
-.fwrap{max-width:760px;margin-top:56px}
+.faq-section{margin-bottom:44px}
+.faq-section.hidden{display:none}
+.cat-hdr{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--bdr)}
+.cat-ico{width:36px;height:36px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cat-ico svg{width:16px;height:16px;color:#fff}
+.cat-hdr-txt h3{font-size:15px;font-weight:700;color:var(--navy)}
+.cat-hdr-txt p{font-size:12px;color:var(--gray3);margin-top:2px}
 .fi{border-bottom:1px solid var(--bdr)}
-.fq{padding:22px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px;font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-.01em;transition:color .2s}
+.fq{padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px;font-size:14px;font-weight:500;color:var(--navy);letter-spacing:-.01em;transition:color .2s}
 .fq:hover{color:var(--blue)}
-.ftog{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--bdr);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--blue);transition:all .35s}
+.ftog{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--bdr);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--blue);transition:all .35s}
 .fi.open .ftog{transform:rotate(45deg);background:var(--navy);border-color:var(--navy);color:#fff}
-.fa{font-size:13.5px;color:var(--gray3);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
-.fi.open .fa{max-height:220px;padding-bottom:22px}
-
-/* BLOG */
-#blog{padding:120px 60px;background:var(--off)}
-.bgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:20px;margin-top:56px}
-.bcard{background:#fff;border:1px solid var(--bdr);border-radius:10px;overflow:hidden;transition:all .35s;cursor:pointer}
-.bcard:hover{transform:translateY(-5px);box-shadow:var(--sh3);border-color:rgba(29,78,216,.15)}
-.bimg{height:160px;background:var(--gray1);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.bcard.ft .bimg{height:220px}
-.bfill{position:absolute;inset:0;transition:transform .5s ease}
-.bcard:hover .bfill{transform:scale(1.04)}
-.btag{position:relative;z-index:1;background:var(--navy);color:#fff;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:4px}
-.bbody{padding:22px}
-.btitle{font-size:14.5px;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:10px;letter-spacing:-.01em}
-.bcard.ft .btitle{font-size:18px}
-.bmeta{font-size:11px;color:var(--gray3)}
-
-/* CONTACT */
-#contact{padding:120px 60px;background:var(--navy);position:relative;overflow:hidden}
-.cline{position:absolute;top:0;left:60px;right:60px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)}
-.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative;z-index:1}
-.cleft .ey{color:#93C5FD}
-.cleft .ey::before{background:#93C5FD}
-.cleft .st{color:#fff}
-.cilist{margin-top:44px;display:flex;flex-direction:column;gap:22px}
-.ci{display:flex;gap:14px;align-items:flex-start}
-.ciico{width:38px;height:38px;flex-shrink:0;border:1px solid rgba(255,255,255,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#93C5FD}
-.ciico svg{width:16px;height:16px}
-.citxt{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.65}
-.citxt strong{color:#fff;font-size:12px;font-weight:600;display:block;margin-bottom:2px;letter-spacing:.04em;text-transform:uppercase}
-.citxt a{color:rgba(255,255,255,.5);text-decoration:none}
-.citxt a:hover{color:#93C5FD}
-.socrow{margin-top:36px}
-.soclabel{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
-.socbtns{display:flex;gap:12px}
-.soc{width:42px;height:42px;border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;transition:all .25s}
-.soc:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25);transform:translateY(-2px)}
-.socwa:hover{background:#25D366;border-color:#25D366;color:#fff}
-.cform{display:flex;flex-direction:column;gap:16px}
-.crow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cgrp{position:relative}
-.clbl{position:absolute;top:13px;left:14px;font-size:11px;font-weight:500;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;pointer-events:none;transition:all .25s}
-.cinp:focus~.clbl,.cinp:not(:placeholder-shown)~.clbl{top:6px;font-size:9px;color:#93C5FD}
-.cinp{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:22px 14px 8px;color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;outline:none;transition:border-color .25s}
-.cinp:focus{border-color:rgba(255,255,255,.3)}
-.cinp::placeholder{color:transparent}
-textarea.cinp{min-height:110px;resize:vertical}
-.csel{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:14px;color:rgba(255,255,255,.45);font-family:'Inter',sans-serif;font-size:13.5px;outline:none;cursor:pointer;transition:border-color .25s}
-.csel:focus{border-color:rgba(255,255,255,.3)}
-.csel option{background:var(--navy);color:#fff}
-.bsub{background:#fff;color:var(--navy);border:none;padding:14px 32px;border-radius:7px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .25s;align-self:flex-start}
-.bsub:hover{background:var(--gray1);transform:translateY(-1px);box-shadow:var(--sh1)}
-
+.fa{font-size:13.5px;color:var(--gray3);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .45s ease,padding .3s}
+.fi.open .fa{max-height:320px;padding-bottom:18px}
+/* NO RESULTS */
+.no-results{text-align:center;padding:60px 20px;display:none}
+.no-results svg{width:44px;height:44px;color:var(--gray2);margin:0 auto 14px;display:block}
+.no-results h3{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.no-results p{font-size:13px;color:var(--gray3)}
 /* FOOTER */
 footer{background:#060E1C;padding:44px 60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.04)}
 .fn{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.01em}
@@ -272,66 +101,27 @@ footer{background:#060E1C;padding:44px 60px;display:flex;justify-content:space-b
 .flinks{display:flex;gap:20px}
 .flinks a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
 .flinks a:hover{color:#93C5FD}
-
-/* FAB */
-.fab{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(10,22,40,.35);z-index:800;cursor:pointer;transition:all .25s;animation:fabp 3s ease infinite}
+.fab{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(10,22,40,.35);z-index:800;cursor:pointer;transition:all .25s}
 .fab:hover{background:var(--navy3);transform:scale(1.08)}
-@keyframes fabp{0%,100%{box-shadow:0 8px 28px rgba(10,22,40,.35)}50%{box-shadow:0 8px 36px rgba(10,22,40,.5)}}
 .fab svg{width:24px;height:24px;color:#fff}
 .fabb{position:absolute;top:-2px;right:-2px;width:16px;height:16px;background:#22C55E;border-radius:50%;border:2px solid #fff;font-size:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-
-/* ANIMATIONS */
-@keyframes fup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fin{from{opacity:0}to{opacity:1}}
-.rev{opacity:0;transform:translateY(28px);transition:all .65s ease}
-.rev.vis{opacity:1;transform:translateY(0)}
 .revl{opacity:0;transform:translateX(-24px);transition:all .65s ease}
 .revl.vis{opacity:1;transform:translateX(0)}
-.revr{opacity:0;transform:translateX(24px);transition:all .65s ease}
-.revr.vis{opacity:1;transform:translateX(0)}
-
+.rev{opacity:0;transform:translateY(28px);transition:all .65s ease}
+.rev.vis{opacity:1;transform:translateY(0)}
 @media(max-width:900px){
-  nav{padding:0 20px}
-  .nm{display:none}
-  #hero,#services,#chatbot,#kbsec,#team,#faq,#blog{padding:80px 20px}
-  #stats,#trusted,#contact{padding:60px 20px}
+  nav{padding:0 20px}.nm{display:none}
+  .pbanner{padding:120px 20px 60px}.wsec{padding:60px 20px}
   footer{padding:36px 20px;flex-direction:column;gap:16px;text-align:center}
-  .hright{display:none}
-  .sg,.pgrid,.bgrid{grid-template-columns:1fr}
-  .cbgrid,.cgrid,.tgrid,.crow{grid-template-columns:1fr}
-}
-
-.pbanner{padding:140px 60px 80px;background:var(--navy);position:relative;overflow:hidden}
-.pbanner::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-.pglow{position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,.12),transparent 65%);pointer-events:none}
-.pbc{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);margin-bottom:24px;position:relative;z-index:1}
-.pbc a{color:rgba(255,255,255,.35);text-decoration:none}
-.pbc span{color:rgba(255,255,255,.6)}
-.pey{display:inline-flex;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
-.ptitle{font-family:"Playfair Display",Georgia,serif;font-size:clamp(38px,5vw,64px);font-weight:500;line-height:1.1;letter-spacing:-.02em;color:#fff;position:relative;z-index:1}
-.ptitle em{font-style:italic;color:#60A5FA}
-.psub{font-size:15px;color:rgba(255,255,255,.5);margin-top:14px;max-width:540px;line-height:1.7;position:relative;z-index:1}
-.wsec{padding:100px 60px}
-.wsec.off{background:var(--off)}
-#pgbar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue2));z-index:3000;width:0;transition:width .1s linear}
-@media(max-width:900px){
-  .pbanner{padding:120px 20px 60px}
-  .wsec{padding:60px 20px}
-  nav{padding:0 20px}
-  .nm{display:none}
-  footer{padding:36px 20px;flex-direction:column;gap:16px;text-align:center}
-  .faqgrid{grid-template-columns:1fr!important}
-  .faqsticky{position:static!important}
+  .faqgrid{grid-template-columns:1fr}.faqsidebar{position:static}
+  .fstats{gap:20px;flex-wrap:wrap}
 }
 </style>
 </head>
 <body>
 <div id="pgbar"></div>
 <nav id="nav">
-  <a href="/" class="nb">
-    <div class="nb1">Chirag Shah &amp; Co.</div>
-    <div class="nb2">Advocates &amp; Solicitors</div>
-  </a>
+  <a href="/" class="nb"><div class="nb1">Chirag Shah &amp; Co.</div><div class="nb2">Advocates &amp; Solicitors</div></a>
   <ul class="nm">
     <li><a href="/">Home</a></li>
     <li><a href="/services.html">Services</a></li>
@@ -342,104 +132,176 @@ footer{background:#060E1C;padding:44px 60px;display:flex;justify-content:space-b
     <li><a href="/contact.html" class="ncta">Book Now</a></li>
   </ul>
 </nav>
+
 <div class="pbanner">
   <div class="pglow"></div>
   <div class="pbc"><a href="/">Home</a><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg><span>FAQ</span></div>
-  <div class="pey">Frequently Asked</div>
+  <div class="pey">Frequently Asked Questions</div>
   <h1 class="ptitle">Common<br><em>Questions</em></h1>
-  <p class="psub">Everything you need to know about working with us. Can't find your answer? Contact us directly.</p>
+  <p class="psub">Everything you need to know about working with Chirag Shah &amp; Co. Can't find your answer? Reach us directly.</p>
+  <div class="fsearch">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="faqSearch" placeholder="Search e.g. 'property', 'divorce', 'fees', 'bail'...">
+  </div>
+  <div class="fstats">
+    <div><div class="fstat-n">45<span>+</span></div><div class="fstat-l">Questions Answered</div></div>
+    <div><div class="fstat-n">9</div><div class="fstat-l">Categories</div></div>
+    <div><div class="fstat-n">2h</div><div class="fstat-l">Avg. Response Time</div></div>
+  </div>
 </div>
-<section class="wsec off">
-  <div style="display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:start" class="faqgrid">
 
-    <div style="position:sticky;top:100px" class="revl faqsticky">
-      <div class="ey" style="margin-bottom:14px">Still Have Questions?</div>
-      <h2 class="st" style="font-size:26px;margin-bottom:18px">Reach <em>Us Directly</em></h2>
-      <p style="font-size:13px;color:var(--gray3);line-height:1.7;margin-bottom:24px">Our team is happy to answer anything not covered here.</p>
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <a href="tel:+918898050051" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border:1.5px solid var(--bdr);border-radius:8px;text-decoration:none;color:var(--navy);font-size:13px;font-weight:500;transition:border-color .2s">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-          +91 88980 50051
-        </a>
-        <a href="https://wa.me/+918898050051/?text=Hello" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border:1.5px solid var(--bdr);border-radius:8px;text-decoration:none;color:var(--navy);font-size:13px;font-weight:500;transition:border-color .2s">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp Us
-        </a>
-        <a href="/cdn-cgi/l/email-protection#f990979f96b9989d8f969a988d9c8a919891d79a9694" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border:1.5px solid var(--bdr);border-radius:8px;text-decoration:none;color:var(--navy);font-size:13px;font-weight:500;transition:border-color .2s">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span class="__cf_email__" data-cfemail="c5acaba3aa85a4a1b3aaa6a4b1a0b6ada4adeba6aaa8">[email&#160;protected]</span>
-        </a>
-        <a href="/contact.html" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:var(--navy);border-radius:8px;text-decoration:none;color:#fff;font-size:13px;font-weight:600">
-          Book a Consultation &rarr;
-        </a>
+<section class="wsec off">
+  <div class="faqgrid">
+
+    <div class="faqsidebar revl">
+      <div class="sidebar-title">Browse by Category</div>
+      <div class="cat-nav">
+        <button class="cat-btn active" data-cat="all"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>All Questions<span class="cat-count">45</span></button>
+        <button class="cat-btn" data-cat="general"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>General<span class="cat-count">8</span></button>
+        <button class="cat-btn" data-cat="property"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>Property &amp; Real Estate<span class="cat-count">6</span></button>
+        <button class="cat-btn" data-cat="family"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Family &amp; Divorce<span class="cat-count">5</span></button>
+        <button class="cat-btn" data-cat="criminal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Criminal Law<span class="cat-count">5</span></button>
+        <button class="cat-btn" data-cat="corporate"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>Corporate &amp; Company<span class="cat-count">5</span></button>
+        <button class="cat-btn" data-cat="consumer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>Consumer &amp; Labour<span class="cat-count">5</span></button>
+        <button class="cat-btn" data-cat="ip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/></svg>IP &amp; IT Laws<span class="cat-count">5</span></button>
+        <button class="cat-btn" data-cat="fees"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Fees &amp; Process<span class="cat-count">6</span></button>
+        <button class="cat-btn" data-cat="ai"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>AI Assistant<span class="cat-count">5</span></button>
+      </div>
+
+      <div class="scontact">
+        <h4>Still have questions?</h4>
+        <p>Our team responds within 2 hours on working days.</p>
+        <div class="scl">
+          <a href="tel:+918898050051" class="sclink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>+91 88980 50051</a>
+          <a href="https://wa.me/+918898050051/?text=Hello" target="_blank" class="sclink"><svg viewBox="0 0 24 24" fill="#25D366" width="13" height="13"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp Us</a>
+          <a href="mailto:info@advocateshah.com" class="sclink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@advocateshah.com</a>
+        </div>
+        <a href="/contact.html" class="scbook">Book a Consultation &rarr;</a>
       </div>
     </div>
 
-    <div class="revr">
-      <div class="fwrap" style="max-width:none">
-    <div class="fi">
-      <div class="fq">How do I book an initial consultation?<div class="ftog">+</div></div>
-      <div class="fa">You can book by filling the contact form, calling +91 88980 50051, or messaging on WhatsApp. We respond within 2 hours and schedule appointments within 24-48 hours. Our AI assistant Lex is also available 24/7 for initial queries.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">What areas of law does the firm handle?<div class="ftog">+</div></div>
-      <div class="fa">Chirag Shah & Co. handles property litigation, divorce and family law, criminal cases, company law, cooperative society matters, money recovery, real estate and conveyance, consumer law, rent control, labour law, IT laws, intellectual property rights, and document registration.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">Is the AI chatbot Lex confidential?<div class="ftog">+</div></div>
-      <div class="fa">Yes. All conversations with Lex are encrypted and confidential within the session. Lex does not store personally identifiable information beyond your session unless you book a consultation. Formal attorney-client privilege applies when you engage our advocates directly.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">What are your consultation fees?<div class="ftog">+</div></div>
-      <div class="fa">Fees vary by case complexity. Our initial 30-minute consultation is available at a nominal fee. Please call +91 88980 50051 or WhatsApp us for current fee details applicable to your specific legal situation.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">Where is the office located?<div class="ftog">+</div></div>
-      <div class="fa">Our office is at 605, Pearl Plaza, Next to McDonald's, Opp. Andheri Railway Station, Andheri West, Mumbai - 400058. Easily accessible from Andheri Station (Western line), with parking nearby.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">How long does a typical case take?<div class="ftog">+</div></div>
-      <div class="fa">Duration varies significantly by type. Simple matters like document registration may be done in days. Litigation matters typically take months to years depending on court schedules and complexity. We provide realistic timelines at your initial consultation.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">Do you offer payment plans?<div class="ftog">+</div></div>
-      <div class="fa">Yes. We understand legal fees can be a concern and offer flexible payment arrangements for eligible clients. This is discussed at the initial consultation stage based on the nature and scope of your matter.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">Can I get advice over phone or video call?<div class="ftog">+</div></div>
-      <div class="fa">Yes. We offer consultations over phone, video call, and WhatsApp for clients who cannot visit in person. Contact us to schedule a remote appointment at your convenience.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">What documents should I bring to my first appointment?<div class="ftog">+</div></div>
-      <div class="fa">For property matters: title deeds, sale agreements, tax receipts. For family matters: marriage certificate, financial documents. For criminal matters: FIR copy, court notices. For company matters: MOA, AOA, board resolutions. Bring all correspondence related to your matter.</div>
-    </div>
-    <div class="fi">
-      <div class="fq">Do you handle urgent/emergency legal matters?<div class="ftog">+</div></div>
-      <div class="fa">Yes. For urgent matters such as bail applications, injunctions or emergency restraining orders, call +91 88980 50051 directly. We prioritise emergency cases and aim to respond within the hour during office hours.</div>
-    </div></div>
-    </div>
+    <div class="faq-content rev">
+      <div class="no-results" id="noResults">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3>No results found</h3>
+        <p>Try different keywords or <a href="/contact.html" style="color:var(--blue)">contact us directly</a>.</p>
+      </div>
 
+      <!-- GENERAL -->
+      <div class="faq-section" data-cat="general">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="cat-hdr-txt"><h3>General Questions</h3><p>About the firm, appointments &amp; working with us</p></div></div>
+        <div class="fi"><div class="fq">How do I book an initial consultation?<div class="ftog">+</div></div><div class="fa">You can book by filling the contact form on our website, calling +91 88980 50051, or messaging on WhatsApp. We respond within 2 hours and schedule appointments within 24–48 hours. Our AI assistant is also available 24/7 to book a slot for you instantly.</div></div>
+        <div class="fi"><div class="fq">Where is the office located?<div class="ftog">+</div></div><div class="fa">Our office is at 605, Pearl Plaza, Next to McDonald's, Opp. Andheri Railway Station, Andheri West, Mumbai – 400058. Easily accessible from Andheri Station (Western Line), with parking available nearby.</div></div>
+        <div class="fi"><div class="fq">What are your office hours?<div class="ftog">+</div></div><div class="fa">Our office is open Monday to Saturday, 10:00 AM to 7:00 PM. We are closed on Sundays and public holidays. For urgent matters outside these hours, you can WhatsApp us and we will respond at the earliest opportunity.</div></div>
+        <div class="fi"><div class="fq">Can I get legal advice over phone or video call?<div class="ftog">+</div></div><div class="fa">Yes. We offer consultations over phone, video call (Zoom / Google Meet), and WhatsApp for clients who cannot visit in person. Contact us to schedule a remote appointment at a time that suits you.</div></div>
+        <div class="fi"><div class="fq">Do you handle urgent or emergency legal matters?<div class="ftog">+</div></div><div class="fa">Yes. For urgent matters such as bail applications, injunctions, or emergency restraining orders, call +91 88980 50051 directly. We prioritise emergency cases and aim to respond within the hour during office hours.</div></div>
+        <div class="fi"><div class="fq">What documents should I bring to my first appointment?<div class="ftog">+</div></div><div class="fa">For property matters: title deeds, sale agreements, tax receipts. For family matters: marriage certificate, financial documents. For criminal matters: FIR copy, court notices. For company matters: MOA, AOA, board resolutions. As a general rule, bring all correspondence and documents related to your matter.</div></div>
+        <div class="fi"><div class="fq">How long has the firm been in practice?<div class="ftog">+</div></div><div class="fa">Chirag Shah &amp; Co. has been serving clients across Mumbai for over two decades with a proven track record in litigation and advisory work across civil, criminal, corporate, and property law. We are registered with the Bar Council of Maharashtra and practice at the Bombay High Court and subordinate courts.</div></div>
+        <div class="fi"><div class="fq">Do you offer a free initial consultation?<div class="ftog">+</div></div><div class="fa">We offer a brief complimentary 15-minute call to understand your matter before confirming a formal consultation. A nominal consultation fee applies for the full appointment. Please contact us to schedule your initial call.</div></div>
+      </div>
+
+      <!-- PROPERTY -->
+      <div class="faq-section" data-cat="property">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div><div class="cat-hdr-txt"><h3>Property &amp; Real Estate</h3><p>Litigation, conveyance, redevelopment &amp; transfers</p></div></div>
+        <div class="fi"><div class="fq">What is conveyance and do I need a lawyer for it?<div class="ftog">+</div></div><div class="fa">Conveyance is the legal process of transferring property ownership via a Deed of Conveyance. A lawyer is strongly advisable as errors in drafting can lead to disputes or invalid transfers. We handle title search, drafting, stamp duty calculation, registration, and mutation — end to end.</div></div>
+        <div class="fi"><div class="fq">What is a property litigation case?<div class="ftog">+</div></div><div class="fa">Property litigation covers ownership disputes, partition suits, encroachment matters, tenancy conflicts, and disputes arising from sale agreements. We represent clients at all stages from legal notices to full court proceedings and appeals at the High Court.</div></div>
+        <div class="fi"><div class="fq">What does your real estate and property transfer service cover?<div class="ftog">+</div></div><div class="fa">Our services include title verification, drafting of sale deeds and agreements, stamp duty guidance, registration of documents, liaison with the Sub-Registrar's office, mutation of records, and handling any legal objections or disputes during the transfer process.</div></div>
+        <div class="fi"><div class="fq">How can you help with housing society redevelopment?<div class="ftog">+</div></div><div class="fa">We advise housing societies and individual members on redevelopment agreements, negotiating terms with developers, drafting Development Agreements, handling disputes with developers or other members, and ensuring compliance with RERA and Maharashtra Society laws throughout the redevelopment process.</div></div>
+        <div class="fi"><div class="fq">What is the Rent Control Act and who does it apply to?<div class="ftog">+</div></div><div class="fa">The Maharashtra Rent Control Act, 1999 governs rental relationships for most older residential and commercial premises in Maharashtra. We handle eviction proceedings, fixation of standard rent, recovery of possession, and disputes related to illegal sub-letting or unlawful occupation.</div></div>
+        <div class="fi"><div class="fq">Can you help if a builder has not delivered my flat on time?<div class="ftog">+</div></div><div class="fa">Yes. Under RERA, developers are legally bound to deliver possession by the committed date. Buyers can claim compensation for delays. We file complaints before MahaRERA, negotiate with developers, and pursue legal remedies for delayed possession, defective construction, or failure to hand over promised amenities.</div></div>
+      </div>
+
+      <!-- FAMILY -->
+      <div class="faq-section" data-cat="family">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><div class="cat-hdr-txt"><h3>Family &amp; Divorce</h3><p>Divorce, custody, maintenance &amp; matrimonial matters</p></div></div>
+        <div class="fi"><div class="fq">What are the grounds for divorce under Indian law?<div class="ftog">+</div></div><div class="fa">Under the Hindu Marriage Act, grounds include cruelty, adultery, desertion (2+ years), conversion of religion, mental disorder, communicable disease, and irretrievable breakdown (for mutual consent divorce). Personal laws for other religions have their own provisions. We advise clients on which grounds apply and the best approach for their situation.</div></div>
+        <div class="fi"><div class="fq">How long does a divorce take in India?<div class="ftog">+</div></div><div class="fa">Mutual consent divorce typically takes 6–18 months, including the 6-month cooling-off period (which courts may waive). Contested divorces can take 2–7 years or more depending on complexity and court schedules. We work efficiently and explore mediation wherever appropriate to reduce timelines.</div></div>
+        <div class="fi"><div class="fq">Can I get maintenance or alimony during the divorce process?<div class="ftog">+</div></div><div class="fa">Yes. Interim maintenance (pendente lite) can be claimed during the pendency of the case under Section 24 of the Hindu Marriage Act or similar provisions. Permanent alimony is determined at the time of final divorce. We assess entitlement and file the appropriate applications on your behalf.</div></div>
+        <div class="fi"><div class="fq">How is child custody decided in India?<div class="ftog">+</div></div><div class="fa">Courts determine custody primarily based on the best interests of the child — considering age, the child's preference (for older children), each parent's ability to provide, existing bonding, and stability of home environment. Both physical and joint custody arrangements are possible. We represent parents in custody proceedings and assist in mediated agreements.</div></div>
+        <div class="fi"><div class="fq">What is a domestic violence case and how can you help?<div class="ftog">+</div></div><div class="fa">The Protection of Women from Domestic Violence Act, 2005 provides civil remedies including Protection Orders, Residence Orders, and Monetary Relief. We assist survivors in filing applications before the Magistrate's Court and obtaining emergency interim relief. We also handle related criminal complaints under Section 498A of the IPC if applicable.</div></div>
+      </div>
+
+      <!-- CRIMINAL -->
+      <div class="faq-section" data-cat="criminal">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="cat-hdr-txt"><h3>Criminal Law</h3><p>FIR, bail, trial defence &amp; criminal proceedings</p></div></div>
+        <div class="fi"><div class="fq">What should I do if an FIR has been filed against me?<div class="ftog">+</div></div><div class="fa">Contact a lawyer immediately. Do not speak to police or make any statements without legal advice. Your lawyer can review the FIR, advise on anticipatory bail if you have not yet been arrested, challenge the FIR if it is frivolous or malicious, and represent you through the investigation and trial process.</div></div>
+        <div class="fi"><div class="fq">What is anticipatory bail and how do I apply for it?<div class="ftog">+</div></div><div class="fa">Anticipatory bail (Section 438 CrPC) is a pre-arrest bail granted when there is a reasonable apprehension of arrest. It is filed before the Sessions Court or High Court. We file such applications urgently, represent clients at hearings, and obtain protection before any arrest is made — critical in cases involving false or motivated complaints.</div></div>
+        <div class="fi"><div class="fq">Can you help if I have been wrongly accused?<div class="ftog">+</div></div><div class="fa">Yes. We regularly handle cases where clients are falsely implicated. Our approach includes gathering evidence of innocence, filing petitions to quash the FIR before the High Court under Section 482 CrPC, and vigorously contesting the prosecution's case at trial. We also advise on filing complaints against those who lodge false cases.</div></div>
+        <div class="fi"><div class="fq">What is the legal process after arrest?<div class="ftog">+</div></div><div class="fa">After arrest, the accused must be produced before a Magistrate within 24 hours. Police may seek remand, while the defence can apply for bail at the Magistrate, Sessions Court, or High Court level. A charge sheet is typically filed within 60–90 days, after which the trial commences. We represent clients at every stage from arrest to acquittal.</div></div>
+        <div class="fi"><div class="fq">Do you handle cheque bounce (Section 138 NI Act) cases?<div class="ftog">+</div></div><div class="fa">Yes. Dishonour of cheques under Section 138 of the Negotiable Instruments Act is a criminal offence carrying imprisonment up to 2 years or fine or both. We represent both complainants seeking recovery and accused persons defending prosecution, handling demand notices, filing of complaints, trial, and appeals.</div></div>
+      </div>
+
+      <!-- CORPORATE -->
+      <div class="faq-section" data-cat="corporate">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="cat-hdr-txt"><h3>Corporate &amp; Company Law</h3><p>Company disputes, cooperative societies &amp; money recovery</p></div></div>
+        <div class="fi"><div class="fq">What is company litigation and when do I need it?<div class="ftog">+</div></div><div class="fa">Company litigation covers shareholder disputes, oppression and mismanagement petitions under the Companies Act, disputes over board decisions, winding-up petitions, and enforcement of shareholder agreements. You need legal assistance when governance disputes arise, minority shareholder rights are being suppressed, or company operations are conducted fraudulently.</div></div>
+        <div class="fi"><div class="fq">Can you help with cooperative society disputes?<div class="ftog">+</div></div><div class="fa">Yes. We handle all aspects of cooperative society law including election disputes, membership and share transfer issues, challenges to managing committee decisions, disputes between members, maintenance and account matters, and redevelopment disputes. We appear before the Cooperative Court, Registrar, and Bombay High Court.</div></div>
+        <div class="fi"><div class="fq">What is a money recovery suit and how does it work?<div class="ftog">+</div></div><div class="fa">A money recovery suit is filed to recover unpaid debts, loans, dues, security deposits, or damages from individuals or companies. We also handle recovery through arbitration, Debt Recovery Tribunals (DRT), and SARFAESI proceedings for secured creditors. We issue legal notices, file summary suits, and pursue enforcement of decrees.</div></div>
+        <div class="fi"><div class="fq">Do you handle arbitration matters?<div class="ftog">+</div></div><div class="fa">Yes. We have extensive experience in domestic arbitration under the Arbitration and Conciliation Act, 1996. We draft arbitration clauses, represent parties in proceedings, file and oppose applications to set aside awards, and assist with enforcement of arbitral awards. Arbitration is often faster and more confidential than court proceedings — we advise on whether it is the right forum.</div></div>
+        <div class="fi"><div class="fq">Can you help register a company or LLP?<div class="ftog">+</div></div><div class="fa">Yes. We assist with registration of Private Limited Companies, One Person Companies (OPC), LLPs, and Section 8 companies. Our services include name approval, drafting MOA and AOA, MCA portal filing, DIN and DSC registration, PAN/TAN applications, and post-incorporation compliance advisory.</div></div>
+      </div>
+
+      <!-- CONSUMER & LABOUR -->
+      <div class="faq-section" data-cat="consumer">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><div class="cat-hdr-txt"><h3>Consumer &amp; Labour Law</h3><p>Consumer complaints, employment disputes &amp; labour rights</p></div></div>
+        <div class="fi"><div class="fq">How do I file a consumer complaint in India?<div class="ftog">+</div></div><div class="fa">Under the Consumer Protection Act, 2019, complaints can be filed before the District Commission (up to ₹1 crore), State Commission (₹1–10 crore), or National Commission (above ₹10 crore). You can also file online at edaakhil.nic.in. We assist in drafting complaints, representing you at hearings, and obtaining orders for refund, replacement, compensation, and punitive damages.</div></div>
+        <div class="fi"><div class="fq">What consumer rights do I have against a builder or developer?<div class="ftog">+</div></div><div class="fa">Buyers are consumers under the Consumer Protection Act and can claim relief for delayed possession, defective construction, failure to provide promised amenities, and false representations. You can approach both the Consumer Forum and MahaRERA. Courts have awarded significant compensation including interest on the purchase amount for delays.</div></div>
+        <div class="fi"><div class="fq">Can you help with wrongful termination from employment?<div class="ftog">+</div></div><div class="fa">Yes. Under the Industrial Disputes Act, employees in certain categories are protected against arbitrary dismissal. We handle reinstatement applications, claims for back wages, gratuity disputes, and retrenchment compensation. For managerial employees, we advise on employment contract enforcement, non-compete clauses, and POSH complaints.</div></div>
+        <div class="fi"><div class="fq">What is a POSH complaint and how does the process work?<div class="ftog">+</div></div><div class="fa">The Prevention of Sexual Harassment of Women at Workplace Act, 2013 (POSH) requires employers to constitute an Internal Complaints Committee (ICC). Complaints must be filed within 3 months of the incident. We advise complainants, assist organisations in constituting ICCs and conducting inquiries, and represent parties in appeals before courts.</div></div>
+        <div class="fi"><div class="fq">Can you help recover unpaid salary, gratuity or PF dues?<div class="ftog">+</div></div><div class="fa">Yes. Employees are entitled to unpaid salary, gratuity (after 5 years of continuous service), earned leave encashment, and provident fund. We send legal notices, file claims before the appropriate Labour Authority, and litigate before Labour Courts or civil courts if necessary. Gratuity claims have strict timelines which we ensure are met.</div></div>
+      </div>
+
+      <!-- IP & IT -->
+      <div class="faq-section" data-cat="ip">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/></svg></div><div class="cat-hdr-txt"><h3>IP &amp; IT Laws</h3><p>Trademarks, copyrights, patents &amp; cybercrimes</p></div></div>
+        <div class="fi"><div class="fq">How do I register a trademark in India?<div class="ftog">+</div></div><div class="fa">Trademark registration is done through the Trade Marks Registry. The process involves trademark search, filing the application, examination by the Registry, publication in the Trade Marks Journal, a 4-month opposition period, and registration. We handle the full process and also represent clients in opposition proceedings and infringement disputes before the Bombay High Court.</div></div>
+        <div class="fi"><div class="fq">What can I do if someone is copying my brand or logo?<div class="ftog">+</div></div><div class="fa">If someone is using a mark identical or deceptively similar to yours, you can seek a civil injunction to immediately stop the infringement, claim damages, and in cases of deliberate copying, initiate criminal prosecution. We file urgent injunction applications, send cease and desist notices, and handle infringement suits before the Bombay High Court.</div></div>
+        <div class="fi"><div class="fq">How do I protect my creative work under copyright law?<div class="ftog">+</div></div><div class="fa">Copyright in India arises automatically upon creation of an original literary, artistic, musical, or cinematographic work. Formal registration with the Copyright Office is not mandatory but creates a public record and evidentiary presumption. We advise on copyright registration, licensing agreements, and represent clients in infringement disputes — particularly in content creation, software, and media.</div></div>
+        <div class="fi"><div class="fq">What is a cybercrime and how can a lawyer help?<div class="ftog">+</div></div><div class="fa">Cybercrimes include online fraud, identity theft, hacking, data breaches, online defamation, and cyberstalking. Under the IT Act, 2000 and IPC, these are punishable offences. We assist victims in filing complaints with the Cyber Crime Cell, filing FIRs, and pursuing civil remedies. We also defend individuals accused of cybercrimes in court.</div></div>
+        <div class="fi"><div class="fq">Do you handle data privacy and IT compliance for businesses?<div class="ftog">+</div></div><div class="fa">Yes. With India's Digital Personal Data Protection Act, 2023 (DPDPA) in force, businesses must comply with consent management, data localisation, and breach notification requirements. We advise on privacy policies, terms of service, employee data handling, and compliance frameworks. We also represent companies in regulatory proceedings under the IT Act.</div></div>
+      </div>
+
+      <!-- FEES & PROCESS -->
+      <div class="faq-section" data-cat="fees">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="cat-hdr-txt"><h3>Fees &amp; Process</h3><p>Consultation fees, payment plans, timelines &amp; what to expect</p></div></div>
+        <div class="fi"><div class="fq">What are your consultation fees?<div class="ftog">+</div></div><div class="fa">Fees vary by case complexity and service type. Our initial 30-minute consultation is available at a nominal fee. Advisory retainers, litigation fees, and transactional fees are discussed and agreed upon transparently before we commence work. Please call +91 88980 50051 or WhatsApp us for current fee details applicable to your situation.</div></div>
+        <div class="fi"><div class="fq">Do you offer payment plans or instalment options?<div class="ftog">+</div></div><div class="fa">Yes. We understand that legal fees can be a concern and offer flexible payment arrangements for eligible clients on a case-by-case basis. This is discussed at the initial consultation stage based on the nature, scope, and expected duration of your matter.</div></div>
+        <div class="fi"><div class="fq">How long does a typical legal matter take?<div class="ftog">+</div></div><div class="fa">Duration varies significantly. Document registrations may be completed in a few days. Consumer complaints can take 6–18 months. Civil litigation typically takes 2–5 years depending on court schedules. Criminal matters range from a few months (bail, quashing) to several years (full trial). We provide realistic timelines at your initial consultation.</div></div>
+        <div class="fi"><div class="fq">Will I be kept updated on my case progress?<div class="ftog">+</div></div><div class="fa">Absolutely. We inform clients of all hearing dates, orders passed, and significant developments. You can reach us via WhatsApp at any time and request a case status update. Transparent communication is a core part of how we work with clients.</div></div>
+        <div class="fi"><div class="fq">What is a legal notice and when should I send one?<div class="ftog">+</div></div><div class="fa">A legal notice is a formal communication sent before initiating legal proceedings, giving the other party an opportunity to respond or settle. It is mandatory in certain matters (e.g. cheque bounce under Section 138 NI Act) and strongly advisable in most civil disputes. We draft and send notices tailored to your situation and advise on next steps based on the response.</div></div>
+        <div class="fi"><div class="fq">What is the difference between a civil and criminal case?<div class="ftog">+</div></div><div class="fa">A civil case involves private disputes over rights, property, contracts, or compensation — the remedy is usually monetary or injunctive. A criminal case involves the state prosecuting a person for an offence against society — the consequence can be imprisonment or fine. Some situations (cheque bounce, domestic violence, property fraud) can give rise to both civil and criminal proceedings simultaneously.</div></div>
+      </div>
+
+      <!-- AI ASSISTANT -->
+      <div class="faq-section" data-cat="ai">
+        <div class="cat-hdr"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="cat-hdr-txt"><h3>AI Legal Assistant</h3><p>About our AI chatbot, confidentiality &amp; capabilities</p></div></div>
+        <div class="fi"><div class="fq">What can the AI assistant help me with?<div class="ftog">+</div></div><div class="fa">Our AI legal assistant can help you understand legal concepts in plain language, summarise clauses in agreements or documents, explain provisions of laws (IPC, CrPC, Companies Act, Consumer Protection Act, etc.), answer initial queries about your situation, guide you on what type of legal help you need, and help book a consultation — all available 24/7.</div></div>
+        <div class="fi"><div class="fq">Is the AI chatbot confidential?<div class="ftog">+</div></div><div class="fa">Yes. All conversations with the AI are encrypted and confidential within your session. The assistant does not store personally identifiable information beyond your session unless you choose to book a consultation. Formal attorney-client privilege applies when you engage our advocates directly for legal representation.</div></div>
+        <div class="fi"><div class="fq">Can the AI replace a lawyer?<div class="ftog">+</div></div><div class="fa">No. The AI is a legal information tool, not a legal advice tool. It can educate, summarise, and guide — but cannot represent you in court, give advice specific to your case facts, or form an attorney-client relationship. Think of it as a knowledgeable first point of contact. For actual legal advice and representation, you must consult one of our qualified advocates.</div></div>
+        <div class="fi"><div class="fq">Can the AI help me understand a contract or agreement?<div class="ftog">+</div></div><div class="fa">Yes. You can paste clauses from a contract into the chat and the AI will explain what they mean in plain language, flag potentially unfavourable terms, and explain the implications. This is useful for employment agreements, rent agreements, sale deeds, and NDAs. For a full legal review with professional advice, we recommend booking a consultation with our team.</div></div>
+        <div class="fi"><div class="fq">How do I access the AI assistant?<div class="ftog">+</div></div><div class="fa">The AI assistant is accessible via the chat bubble (bottom right corner of this website), available 24 hours a day, 7 days a week. Simply click the icon and start typing your question. No sign-up is required for initial queries. If you wish to book a consultation through the chatbot, you will be asked for basic contact details.</div></div>
+      </div>
+
+    </div>
   </div>
 </section>
+
 <footer>
-  <div>
-    <div class="fn">Chirag Shah &amp; Co.</div>
-    <div class="fs">Advocates &amp; Solicitors</div>
-  </div>
+  <div><div class="fn">Chirag Shah &amp; Co.</div><div class="fs">Advocates &amp; Solicitors</div></div>
   <div class="fc">&copy; 2025 Chirag Shah &amp; Co. &middot; All rights reserved<br><span style="font-size:10px;opacity:.5">Bar Council of Maharashtra &middot; Mumbai High Court Registered</span></div>
-  <div class="flinks">
-    <a href="#">Privacy</a>
-    <a href="#">Disclaimer</a>
-    <a href="#contact">Contact</a>
-  </div>
-</footer><div class="fab" id="fab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><div class="fabb">AI</div></div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <div class="flinks"><a href="#">Privacy</a><a href="#">Disclaimer</a><a href="/contact.html">Contact</a></div>
+</footer>
+
+<div class="fab" id="fab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><div class="fabb">AI</div></div>
+
+<script>
 window.addEventListener("scroll",function(){
   document.getElementById("pgbar").style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+"%";
   document.getElementById("nav").classList.toggle("sc",scrollY>40);
 });
 var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("vis")});},{threshold:.1});
-document.querySelectorAll(".rev,.revl,.revr").forEach(function(el){ro.observe(el)});
+document.querySelectorAll(".rev,.revl").forEach(function(el){ro.observe(el)});
+// Accordion
 document.querySelectorAll(".fq").forEach(function(q){
   q.addEventListener("click",function(){
     var item=q.parentElement,isOpen=item.classList.contains("open");
@@ -447,9 +309,49 @@ document.querySelectorAll(".fq").forEach(function(q){
     if(!isOpen)item.classList.add("open");
   });
 });
-document.getElementById("fab").addEventListener("click",function(){
-  window.location.href="/contact.html";
+// Category filter
+var catBtns=document.querySelectorAll(".cat-btn");
+var catSections=document.querySelectorAll(".faq-section");
+catBtns.forEach(function(btn){
+  btn.addEventListener("click",function(){
+    catBtns.forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var cat=btn.getAttribute("data-cat");
+    catSections.forEach(function(sec){
+      if(cat==="all"||sec.getAttribute("data-cat")===cat){sec.classList.remove("hidden")}
+      else{sec.classList.add("hidden")}
+    });
+    document.getElementById("faqSearch").value="";
+    document.getElementById("noResults").style.display="none";
+    document.querySelectorAll(".fi").forEach(function(fi){fi.style.display=""});
+  });
 });
+// Search
+document.getElementById("faqSearch").addEventListener("input",function(){
+  var q=this.value.toLowerCase().trim();
+  var total=0;
+  if(!q){
+    catSections.forEach(function(sec){sec.classList.remove("hidden")});
+    document.querySelectorAll(".fi").forEach(function(fi){fi.style.display=""});
+    document.getElementById("noResults").style.display="none";
+    catBtns.forEach(function(b){b.classList.remove("active")});
+    catBtns[0].classList.add("active");
+    return;
+  }
+  catBtns.forEach(function(b){b.classList.remove("active")});
+  catSections.forEach(function(sec){
+    var items=sec.querySelectorAll(".fi"),vis=0;
+    items.forEach(function(fi){
+      if(fi.textContent.toLowerCase().includes(q)){fi.style.display="";vis++;total++;}
+      else{fi.style.display="none"}
+    });
+    sec.classList.toggle("hidden",vis===0);
+  });
+  document.getElementById("noResults").style.display=total===0?"block":"none";
+});
+// FAB
+document.getElementById("fab").addEventListener("click",function(){window.location.href="/contact.html"});
 </script>
 </body>
 </html>
+
